@@ -632,7 +632,7 @@ body {
 .contact-icon {
     width: 50px;
     height: 50px;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -825,8 +825,31 @@ body.loaded {
     opacity: 1;
 }
 
-/* Additional responsive improvements */
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .hero-stats {
+        gap: 40px;
+    }
+
+    .projects-grid {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 25px;
+    }
+
+    .experience-content {
+        gap: 40px;
+    }
+}
+
 @media (max-width: 768px) {
+    .nav-menu {
+        display: none;
+    }
+
+    .nav-toggle {
+        display: flex;
+    }
+
     .hero {
         padding: 100px 0 60px;
     }
@@ -846,28 +869,46 @@ body.loaded {
     .hero-buttons {
         flex-direction: column;
         align-items: center;
+        gap: 15px;
     }
 
     .btn {
         width: 200px;
     }
 
-    .profile-image {
-        width: 250px;
-        height: 250px;
-    }
-
-    .about-profile {
-        width: 250px;
-        height: 250px;
+    .hero-stats {
+        flex-wrap: wrap;
+        gap: 30px;
+        justify-content: center;
     }
 
     .section-title {
         font-size: 2rem;
     }
 
+    .about-content,
+    .contact-content,
+    .experience-content {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .about-details {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
     .skills-category {
         padding: 30px;
+    }
+
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .projects-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
     }
 
     .project-content {
@@ -890,11 +931,38 @@ body.loaded {
     .timeline-content {
         margin-left: 40px;
     }
+
+    .achievements {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+    }
 }
 
 @media (max-width: 480px) {
+    .nav-container {
+        padding: 0 15px;
+    }
+
+    .hero {
+        padding: 80px 0 40px;
+    }
+
     .hero-title {
         font-size: 1.8rem;
+        line-height: 1.3;
+    }
+
+    .hero-subtitle {
+        font-size: 1.1rem;
+    }
+
+    .hero-description {
+        font-size: 0.95rem;
     }
 
     .hero-stats {
@@ -902,7 +970,11 @@ body.loaded {
     }
 
     .stat-number {
-        font-size: 2rem;
+        font-size: 1.8rem;
+    }
+
+    .stat-label {
+        font-size: 0.85rem;
     }
 
     .container {
@@ -910,11 +982,23 @@ body.loaded {
     }
 
     .section-header {
-        margin-bottom: 40px;
+        margin-bottom: 35px;
     }
 
     .section-title {
-        font-size: 1.8rem;
+        font-size: 1.7rem;
+    }
+
+    .section-subtitle {
+        font-size: 1rem;
+    }
+
+    .about-text p {
+        font-size: 1rem;
+    }
+
+    .detail-item {
+        padding: 15px;
     }
 
     .skills-category {
@@ -922,10 +1006,116 @@ body.loaded {
     }
 
     .project-card {
-        margin: 0 -10px;
+        margin: 0 -5px;
+    }
+
+    .project-title {
+        font-size: 1.2rem;
+    }
+
+    .project-description {
+        font-size: 0.9rem;
+    }
+
+    .tech-tag {
+        font-size: 0.75rem;
+        padding: 4px 10px;
+    }
+
+    .timeline-title {
+        font-size: 1.1rem;
+    }
+
+    .timeline-description {
+        font-size: 0.9rem;
+    }
+
+    .achievement-card {
+        padding: 25px;
+    }
+
+    .achievement-title {
+        font-size: 1.1rem;
     }
 
     .contact-content {
         gap: 30px;
+    }
+
+    .contact-item {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+    }
+
+    .contact-icon {
+        width: 45px;
+        height: 45px;
+        font-size: 1.1rem;
+    }
+
+    .contact-details h3 {
+        font-size: 1rem;
+    }
+
+    .contact-form {
+        padding: 25px;
+    }
+
+    .form-group input,
+    .form-group textarea {
+        padding: 12px;
+        font-size: 0.95rem;
+    }
+
+    .footer-content {
+        padding: 30px 15px 20px;
+    }
+
+    .footer-logo {
+        font-size: 20px;
+    }
+
+    .footer-text {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 360px) {
+    .hero-title {
+        font-size: 1.6rem;
+    }
+
+    .hero-buttons {
+        width: 100%;
+    }
+
+    .btn {
+        width: 100%;
+        max-width: 180px;
+    }
+
+    .hero-stats {
+        gap: 15px;
+    }
+
+    .stat-number {
+        font-size: 1.6rem;
+    }
+
+    .container {
+        padding: 0 10px;
+    }
+
+    .section-title {
+        font-size: 1.5rem;
+    }
+
+    .project-content {
+        padding: 15px;
+    }
+
+    .contact-form {
+        padding: 20px;
     }
 }
